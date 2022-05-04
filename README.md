@@ -8,7 +8,7 @@
 [<img align="right" width="50%" src="https://github-readme-stats.vercel.app/api?username=LeixB&show_icons=true&count_private=true">](https://metrics.lecoq.io/LeixB#gh-light-mode-only)
 
 
-I'm LeixB, a Linux enthusiast and NixOS contributor.
+I'm Leix, a Linux enthusiast and NixOS contributor.
 
 - :snowflake: I'm a fan of [Nix](https://nixos.org) and [NixOS](https://nixos.org/nixos/).
 - 🔭 I’m currently exploring ways to make data science projects more reproducible.
