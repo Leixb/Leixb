@@ -106,7 +106,4 @@ I'm Leix, a Linux enthusiast and NixOS contributor.
 <a href="https://cloud.google.com/" title="Google Cloud" style="display:flex;">
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/googlecloud/googlecloud-original.svg" alt="Google Cloud" width=25 height=25>
 </a>
-<a href="https://cmake.org/" title="CMake" style="display:flex;">
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cmake/cmake-original.svg" alt="CMake" width=25 height=25>
-</a>
 </p>
