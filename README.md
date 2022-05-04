@@ -1,5 +1,4 @@
-<h1 aligh="center">Hi there, nice to see you! :wave:</h1>
-</br>
+<h1 align="center">Hi there, nice to see you! :wave:</h1>
 
 [![built with nix](https://img.shields.io/static/v1?logo=nixos&logoColor=white&label=&message=Built%20with%20Nix&color=41439a)](https://builtwithnix.org "built with nix")
 ![visitors](https://visitor-badge.glitch.me/badge?page_id=LeixB.LeixB)
@@ -111,4 +110,3 @@ I'm LeixB, a Linux enthusiast and NixOS contributor.
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cmake/cmake-original.svg" alt="CMake" width=25 height=25>
 </a>
 </p>
-
