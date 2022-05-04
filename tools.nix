@@ -109,7 +109,7 @@ in [
   }
   {
     name = "Vim";
-    url = "https://vim.org/";
+    url = "https://www.vim.org/";
     img = devicon "vim";
     categories = ["Editor"];
     familiarity = 8;
