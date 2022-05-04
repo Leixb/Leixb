@@ -25,7 +25,7 @@ I'm Leix, a Linux enthusiast and NixOS contributor.
 <a href="https://golang.org/" title="Go" style="display:flex;">
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/go/go-original.svg" alt="Go" width=25 height=25>
 </a>
-<a href="https://vim.org/" title="Vim" style="display:flex;">
+<a href="https://www.vim.org/" title="Vim" style="display:flex;">
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vim/vim-original.svg" alt="Vim" width=25 height=25>
 </a>
 <a href="https://neovim.io/" title="Neovim" style="display:flex;">
