@@ -6,38 +6,43 @@
       url = "github:numtide/flake-utils";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
   };
-  outputs = { self, nixpkgs, flake-utils }:
-
-  flake-utils.lib.eachDefaultSystem (system:
-    let
-      pkgs = import nixpkgs { inherit system; };
+  outputs = {
+    self,
+    nixpkgs,
+    flake-utils,
+  }:
+    flake-utils.lib.eachDefaultSystem (system: let
+      pkgs = import nixpkgs {inherit system;};
       lib = pkgs.lib;
     in rec {
-      devShell = with pkgs; mkShellNoCC {
-        name = "grip";
-        buildInputs = [ python3.pkgs.grip ];
-      };
+      devShell = with pkgs;
+        mkShellNoCC {
+          name = "grip";
+          buildInputs = [python3.pkgs.grip];
+        };
 
       packages.README = let
         # tools = lib.sort (a: b: lib.toLower a.name < lib.toLower b.name) [
         tools = lib.sort (a: b: a.familiarity > b.familiarity) (import ./tools.nix);
 
-        makeBadge = { url, name, img, size ? 25 }: ''
+        makeBadge = {
+          url,
+          name,
+          img,
+          size ? 25,
+        }: ''
           <a href="${url}" title="${name}" style="display:flex;">
             <img src="${img}" alt="${name}" width=${toString size} height=${toString size}>
           </a>
         '';
 
         makeBadgeRow = tools:
-          ''<p align="left">'' +
-            lib.concatMapStrings (tool: makeBadge {inherit (tool) url name img;} ) tools
+          ''<p align="left">''
+          + lib.concatMapStrings (tool: makeBadge {inherit (tool) url name img;}) tools
           + "</p>\n";
 
-        tools_section = with builtins; "### :rocket: Things I code with\n\n"
-          + makeBadgeRow tools
-        ;
+        tools_section = "### :rocket: Things I code with\n\n" + makeBadgeRow tools;
 
         username = "LeixB";
         stats_image = "https://github-readme-stats.vercel.app/api?username=${username}&show_icons=true&count_private=true";
@@ -61,23 +66,15 @@
           - 😄 Pronouns: he/him
         '';
 
-        text = ''
-        <h1 aligh="center">Hi there, nice to see you! :wave:</h1>
-        </br>
+        title = ''<h1 align="center">Hi there, nice to see you! :wave:</h1>'';
 
-        ${badges}
-
-        ${stats}
-
-        ${about}
-
-        ${tools_section}
-        '';
-      in pkgs.writeTextFile {
-        name = "github-profile";
-        destination = "/README.md";
-        inherit text;
-      };
+        text = builtins.concatStringsSep "\n\n" [title badges stats about tools_section];
+      in
+        pkgs.writeTextFile {
+          name = "github-profile";
+          destination = "/README.md";
+          inherit text;
+        };
 
       defaultPackage = packages.README;
     });

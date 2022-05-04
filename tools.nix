@@ -41,7 +41,7 @@ in [
     name = "CMake";
     url = "https://cmake.org/";
     img = devicon "cmake";
-    categories = [ "Build" ];
+    categories = ["Build"];
     familiarity = 3;
   }
   {
