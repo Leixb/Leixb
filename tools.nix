@@ -38,13 +38,6 @@ in [
     familiarity = 6;
   }
   {
-    name = "CMake";
-    url = "https://cmake.org/";
-    img = devicon "cmake";
-    categories = ["Build"];
-    familiarity = 3;
-  }
-  {
     name = "Docker";
     url = "https://docker.com/";
     img = devicon "docker";
