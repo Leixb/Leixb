@@ -19,7 +19,23 @@
       devShell = with pkgs;
         mkShellNoCC {
           name = "grip";
-          buildInputs = [python3.pkgs.grip];
+          buildInputs = [
+            python3.pkgs.grip
+            alejandra
+          ];
+
+          shellHook = let
+            GIT_HOOKS = with pkgs;
+              (symlinkJoin {
+                name = "git-hooks";
+                paths = [
+                  (writeShellScriptBin "pre-commit" ''
+                    ${alejandra}/bin/alejandra . --check
+                  '')
+                ];
+              })
+              + "/bin";
+          in "git config --local core.hooksPath ${GIT_HOOKS}";
         };
 
       packages.README = let
